@@ -1,6 +1,6 @@
-const news = require('./news')
+const { news } = require('../actions')
 const router = require('express').Router()
 
-router.use('/news', news)
+router.get('/', news.index)
 
 module.exports = router

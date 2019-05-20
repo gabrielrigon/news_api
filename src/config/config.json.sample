@@ -1,5 +1,8 @@
 {
   "api": {
     "port": 1234
+  },
+  "services": {
+    "theGuardian": "https://content.guardianapis.com/search?api-key=APIKEY"
   }
 }
