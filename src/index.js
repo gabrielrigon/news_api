@@ -1,5 +1,5 @@
+const { config } = require('./config')
 const express = require('express')
-const config = require('./config.json')
 const router = require('./router')
 
 const app = express()
