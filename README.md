@@ -9,12 +9,12 @@ The objective of this project is to demonstrate a basic implementation of API us
 
 ## Running this project
 
-1. Clone this repo on your environment.
+1. Clone this repo on your environment path.
 2. Install the dependencies running the following command: 
 ```sh
   $ yarn
 ```
-3. Copy the `config.json.sample` file, renaming to `config.json`, and configure with your preferences.
+3. Copy the `config.json.sample` file (localized on config folder), rename to `config.json`, and configure with your preferences.
 4. Start the project running the following command:
 ```sh
   $ yarn dev
