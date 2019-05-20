@@ -1,13 +1,14 @@
-const { sources } = require("../data")
+const { sources } = require('../data')
 
 const index = (req, res) => {
-  sources.getLatest()
+  sources
+    .getLatest()
     .then(data => {
       res.json({ data })
     })
     .catch(err => {
       console.error(err)
-      res.status(500).send(err)
+      res.sendStatus(500)
     })
 }
 

@@ -3,6 +3,7 @@
     "port": 1234
   },
   "services": {
-    "theGuardian": "https://content.guardianapis.com/search?api-key=APIKEY"
+    "theGuardian": "https://content.guardianapis.com/search?api-key=APIKEY",
+    "theNewYorkTimes": "https://api.nytimes.com/svc/mostpopular/v2/viewed/1.json?api-key=APIKEY"
   }
 }

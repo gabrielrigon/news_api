@@ -1,12 +1,14 @@
 const { proxy, config } = require('../config')
+const { parser } = require('../services/news')
 
-const callService = data => {
-  const [service, url] = data
+const callService = source => {
+  const [service, url] = source
 
   return new Promise((resolve, reject) => {
     proxy
       .get(url)
-      .then(data => {
+      .then(result => {
+        const data = parser[service](result)
         resolve({ service, data })
       })
       .catch(err => {
