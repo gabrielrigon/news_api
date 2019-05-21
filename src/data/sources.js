@@ -1,5 +1,5 @@
-const { proxy, config } = require('../config')
-const { parser } = require('../services/news')
+const { proxy } = require('../config')
+const { parser, queryHelper } = require('../services/news')
 
 const callService = source => {
   const [service, url] = source
@@ -17,11 +17,12 @@ const callService = source => {
   })
 }
 
-const getLatest = () => {
+const getLatest = query => {
   return new Promise((resolve, reject) => {
-    const { services } = config
+    const { sources } = query
+    const handledSources = queryHelper.safeParams(sources)
 
-    const requests = Object.entries(services).map(item => {
+    const requests = handledSources.map(item => {
       return callService(item)
     })
 

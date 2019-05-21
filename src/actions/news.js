@@ -1,8 +1,10 @@
 const { sources } = require('../data')
 
 const index = (req, res) => {
+  const { query } = req
+
   sources
-    .getLatest()
+    .getLatest(query)
     .then(data => {
       res.json({ data })
     })
