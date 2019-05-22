@@ -3,9 +3,10 @@ const theGuardian = payload => {
 
   return results.map(item => {
     return {
-      date: item.webPublicationDate,
+      date: new Date(item.webPublicationDate),
       title: item.webTitle,
-      url: item.webUrl
+      url: item.webUrl,
+      source: 'The Guardian'
     }
   })
 }
@@ -15,9 +16,10 @@ const theNewYorkTimes = payload => {
 
   return results.map(item => {
     return {
-      date: item.published_date,
+      date: new Date(item.published_date),
       title: item.title,
-      url: item.url
+      url: item.url,
+      source: 'The New York Times'
     }
   })
 }

@@ -1,5 +1,5 @@
 const { proxy } = require('../config')
-const { parser, queryHelper } = require('../services/news')
+const { parser, queryHelper, sorter } = require('../services/news')
 
 const callService = source => {
   const [service, url] = source
@@ -8,13 +8,18 @@ const callService = source => {
     proxy
       .get(url)
       .then(result => {
-        const data = parser[service](result)
-        resolve({ service, data })
+        resolve(parser[service](result))
       })
       .catch(err => {
         reject(err)
       })
   })
+}
+
+const mergeResults = results => {
+  return results.reduce((prev, current) => {
+    return [...prev, ...current]
+  }, [])
 }
 
 const getLatest = query => {
@@ -28,7 +33,7 @@ const getLatest = query => {
 
     Promise.all(requests)
       .then(results => {
-        resolve(results)
+        resolve(sorter.byDate(mergeResults(results)))
       })
       .catch(err => {
         reject(err)

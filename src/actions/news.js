@@ -5,8 +5,8 @@ const index = (req, res) => {
 
   sources
     .getLatest(query)
-    .then(data => {
-      res.json({ data })
+    .then(items => {
+      res.json({ items })
     })
     .catch(err => {
       console.error(err)
