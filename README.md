@@ -7,7 +7,7 @@ The objective of this project is to demonstrate a basic implementation of API us
 - Node 8.12.0
 - Yarn 1.10.1
 
-## Running this project
+## Running this project (development)
 
 1. Clone this repo on your environment path.
 2. Install the dependencies running the following command: 
@@ -20,3 +20,8 @@ The objective of this project is to demonstrate a basic implementation of API us
   $ yarn dev
 ```
 5. The API will be listening on the port that you was defined in the `config.json` file.
+
+## To-do
+
+- [ ] Improve external requests handler
+- [ ] Add authentication
